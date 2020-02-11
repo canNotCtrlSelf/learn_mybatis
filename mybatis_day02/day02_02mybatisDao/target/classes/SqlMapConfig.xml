@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--使用properties标签 可以通过属性引用外部配置文件信息
+        resource属性:用于指定配置文件的路径,按照类路径的写法来写,必须存在于类路径下.
+        url属性:
+            按照url写法来写地址
+            url: uniform resource locator 统一资源定位符 可以唯一标志一个资源的位置
+            写法: 协议 主机 端口 uri
+                  http://localhost:8080/mybatisServlet
+                  uri: uniform resource identify 统一资源标识符 是在应用中唯一定位一个资源
+    -->
+    <!--<properties resource="jdbcConfig.properties">-->
+    <properties url="file:///G:\java_prj\mybatis_prj\mybatis_day02\day02_02mybatisDao\src\main\resources\jdbcConfig.properties">
+        <!--<property name="driver" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis_learn"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="1705640"></property>-->
+    </properties>
+
+    <!--使用typealiases配置别名,只能配置domain中的别名-->
+    <typeAliases>
+        <!--type指定全限定类名,alias指定别名,当指定了别名后,就不区分大小写-->
+        <!--<typeAlias type="com.cncs.domain.User" alias="user"></typeAlias>-->
+        <!--package 用于指定要配置别名的包,该包下的实体类都会注册别名,可以不区分大小写-->
+        <package name="com.cncs.domain"></package>
+    </typeAliases>
+    <!--<properties url="file:///G:\java_prj\mybatis_prj\mybatis_day02\day02_02mybatisDao\src\main\resources\com\cncs\dao\UserDao.xml">-->
+
+    <!--</properties>-->
+
+
+    <!--配置环境-->
+    <environments default="mysql">
+        <!--配置mysql的环境-->
+        <environment id="mysql">
+            <!--配置事务-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置连接池-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"></property>
+                <property name="url" value="${jdbc.url}"></property>
+                <property name="username" value="${jdbc.username}"></property>
+                <property name="password" value="${jdbc.password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--配置映射文件的位置-->
+    <mappers>
+        <!--指定dao接口所在包-->
+       <package name="com.cncs.dao"></package>
+        <!--<mapper resource="com/cncs/dao/UserDao.xml"></mapper>-->
+    </mappers>
+</configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day03_01datasource_and_tx" />
+        <module name="day03_02dynamicSQL" />
+        <module name="day03_03one2many" />
+        <module name="day03_04many2many" />
+        <module name="day03_05JNDI" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day03_01datasource_and_tx" target="1.8" />
+      <module name="day03_02dynamicSQL" target="1.8" />
+      <module name="day03_03one2many" target="1.8" />
+      <module name="day03_04many2many" target="1.8" />
+      <module name="day03_05JNDI" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

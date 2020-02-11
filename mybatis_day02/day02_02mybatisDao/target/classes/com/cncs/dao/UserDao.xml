@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace确定方法的位置-->
+<mapper namespace="com.cncs.dao.UserDao">
+
+    <!--查询所有的操作-->
+    <select id="findAll" resultType="user">
+        select * from user
+    </select>
+    <!--保存用户的操作-->
+    <insert id="saveUser" parameterType="user">
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into user(username,birthday,sex,address) values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+    <!--更新用户-->
+    <update id="updateUser" parameterType="user">
+        update user set username=#{username},address=#{address},sex=#{sex},birthday=#{birthday} where id=#{id}
+    </update>
+    <!--删除用户-->
+    <delete id="deleteUser" parameterType="INTEGER">
+        delete from user where id = #{id}
+    </delete>
+    <!--根据id查询用户-->
+    <select id="findUserById" parameterType="int" resultType="com.cncs.domain.User">
+        select * from user where id = #{id}
+    </select>
+    <!--根据名字查询用户-->
+    <select id="findUserByName" parameterType="string" resultType="user">
+        select * from user where username like #{name}
+    </select>
+    <!--查询用户总数-->
+    <select id="findAllCount" resultType="java.lang.Integer">
+        select count(id) from user
+    </select>
+</mapper>

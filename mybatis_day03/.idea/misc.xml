@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/day03_05JNDI" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/day03_01datasource_and_tx/pom.xml" />
+        <option value="$PROJECT_DIR$/day03_02dynamicSQL/pom.xml" />
+        <option value="$PROJECT_DIR$/day03_03one2many/pom.xml" />
+        <option value="$PROJECT_DIR$/day03_04many2many/pom.xml" />
+        <option value="$PROJECT_DIR$/day03_05JNDI/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/day03_03one2many/day03_04many2many/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

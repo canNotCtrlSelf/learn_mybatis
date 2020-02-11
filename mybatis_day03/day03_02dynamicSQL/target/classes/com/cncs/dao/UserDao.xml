@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace确定方法的位置-->
+<mapper namespace="com.cncs.dao.UserDao">
+    <sql id="defaultSql">
+        select * from user
+    </sql>
+    <!--查询所有的操作-->
+    <select id="findAll" resultType="user">
+        <include refid="defaultSql"></include>
+    </select>
+    <!--根据id查询用户-->
+    <select id="findUserById" parameterType="int" resultType="user">
+        select * from user where id=#{userId}
+    </select>
+    <!--根据名字查询用户-->
+    <select id="findUserByName" parameterType="string" resultType="user">
+        select * from user where username like #{name}
+    </select>
+    <!--使用QueryVo条件查询用户-->
+    <select id="findUserByVo" parameterType="queryVo" resultType="user">
+        select * from user where username like #{user.userName}
+    </select>
+    <select id="findUserByCondition" resultType="user" parameterType="user">
+        select * from user
+        <where>
+            <if test="sex != null">
+                and sex = #{sex}
+            </if>
+            <if test="username != null">
+                and username like #{username}
+            </if>
+        </where>
+    </select>
+    <select id="findUserInIds" parameterType="queryVo" resultType="user">
+       <include refid="defaultSql"></include>
+       <where>
+           <if test="ids != null and ids.size() > 0">
+               <foreach collection="ids" item="uid" open="id in (" close=")" separator=",">
+                   #{uid}
+               </foreach>
+           </if>
+       </where>
+    </select>
+</mapper>

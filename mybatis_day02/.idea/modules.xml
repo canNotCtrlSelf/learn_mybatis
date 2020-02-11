@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day02_01mybatisCRUD/day02_01mybatisCRUD.iml" filepath="$PROJECT_DIR$/day02_01mybatisCRUD/day02_01mybatisCRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02_02mybatisDao/day02_02mybatisDao.iml" filepath="$PROJECT_DIR$/day02_02mybatisDao/day02_02mybatisDao.iml" />
+    </modules>
+  </component>
+</project>

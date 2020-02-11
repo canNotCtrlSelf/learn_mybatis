@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day04_01lazy/day04_01lazy.iml" filepath="$PROJECT_DIR$/day04_01lazy/day04_01lazy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_02cache/day04_02cache.iml" filepath="$PROJECT_DIR$/day04_02cache/day04_02cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_03annotation_mybatis/day04_03annotation_mybatis.iml" filepath="$PROJECT_DIR$/day04_03annotation_mybatis/day04_03annotation_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_04annotation_one2many/day04_04annotation_one2many.iml" filepath="$PROJECT_DIR$/day04_04annotation_one2many/day04_04annotation_one2many.iml" />
+    </modules>
+  </component>
+</project>
